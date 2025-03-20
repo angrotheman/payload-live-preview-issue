@@ -6,6 +6,8 @@ import { fileURLToPath } from 'url'
 
 import config from '@/payload.config'
 import './styles.css'
+import { ServerLivePreview } from './ServerLivePreview'
+import { ClientLivePreview } from './ClientLivePreview'
 
 export default async function HomePage() {
   const headers = await getHeaders()
@@ -27,6 +29,10 @@ export default async function HomePage() {
             width={65}
           />
         </picture>
+
+        {/* <ServerLivePreview /> */}
+        <ClientLivePreview />
+
         {!user && <h1>Welcome to your new project.</h1>}
         {user && <h1>Welcome back, {user.email}</h1>}
         <div className="links">
