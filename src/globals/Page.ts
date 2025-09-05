@@ -1,3 +1,4 @@
+import { sharedFields } from '@/sharedFields'
 import type { GlobalConfig } from 'payload'
 
 export const Page: GlobalConfig = {
@@ -8,25 +9,5 @@ export const Page: GlobalConfig = {
       url: () => '/',
     },
   },
-  fields: [
-    {
-      type: 'text',
-      name: 'title',
-    },
-    {
-      type: 'text',
-      name: 'virtual-field',
-      admin: {
-        readOnly: true,
-      },
-      virtual: true,
-      hooks: {
-        afterRead: [
-          ({ siblingData }) => {
-            return `Virtual ${siblingData['title']}`
-          },
-        ],
-      },
-    },
-  ],
+  fields: [...sharedFields],
 }

@@ -171,6 +171,7 @@ export interface Page {
   slug: string;
   title?: string | null;
   'virtual-field'?: string | null;
+  relation?: (string | Page)[] | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -283,6 +284,7 @@ export interface PagesSelect<T extends boolean = true> {
   slug?: T;
   title?: T;
   'virtual-field'?: T;
+  relation?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -326,6 +328,7 @@ export interface GlobalPage {
   id: string;
   title?: string | null;
   'virtual-field'?: string | null;
+  relation?: (string | Page)[] | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -336,6 +339,7 @@ export interface GlobalPage {
 export interface GlobalPageSelect<T extends boolean = true> {
   title?: T;
   'virtual-field'?: T;
+  relation?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

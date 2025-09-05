@@ -5,6 +5,18 @@ export const PureUI = ({ page }: { page: Page | GlobalPage }) => {
     <div>
       <h1>{page.title}</h1>
       <h1>{page['virtual-field']}</h1>
+
+      {page.relation && page.relation.length >= 1 && (
+        <ul>
+          {page.relation
+            .filter((i) => typeof i !== 'string')
+            .map(({ id, title, slug }) => (
+              <li key={id}>
+                <a href={`/pages/${slug}`}>{title}</a>
+              </li>
+            ))}
+        </ul>
+      )}
     </div>
   )
 }
