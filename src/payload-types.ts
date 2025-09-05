@@ -54,6 +54,7 @@ export type SupportedTimezones =
   | 'Asia/Singapore'
   | 'Asia/Tokyo'
   | 'Asia/Seoul'
+  | 'Australia/Brisbane'
   | 'Australia/Sydney'
   | 'Pacific/Guam'
   | 'Pacific/Noumea'
@@ -84,10 +85,10 @@ export interface Config {
     defaultIDType: string;
   };
   globals: {
-    page: Page;
+    globalPage: GlobalPage;
   };
   globalsSelect: {
-    page: PageSelect<false> | PageSelect<true>;
+    globalPage: GlobalPageSelect<false> | GlobalPageSelect<true>;
   };
   locale: null;
   user: User & {
@@ -131,6 +132,13 @@ export interface User {
   hash?: string | null;
   loginAttempts?: number | null;
   lockUntil?: string | null;
+  sessions?:
+    | {
+        id: string;
+        createdAt?: string | null;
+        expiresAt: string;
+      }[]
+    | null;
   password?: string | null;
 }
 /**
@@ -223,6 +231,13 @@ export interface UsersSelect<T extends boolean = true> {
   hash?: T;
   loginAttempts?: T;
   lockUntil?: T;
+  sessions?:
+    | T
+    | {
+        id?: T;
+        createdAt?: T;
+        expiresAt?: T;
+      };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -276,9 +291,9 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "page".
+ * via the `definition` "globalPage".
  */
-export interface Page {
+export interface GlobalPage {
   id: string;
   title?: string | null;
   'virtual-field'?: string | null;
@@ -287,9 +302,9 @@ export interface Page {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "page_select".
+ * via the `definition` "globalPage_select".
  */
-export interface PageSelect<T extends boolean = true> {
+export interface GlobalPageSelect<T extends boolean = true> {
   title?: T;
   'virtual-field'?: T;
   updatedAt?: T;

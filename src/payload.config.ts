@@ -35,6 +35,10 @@ export default buildConfig({
   db: mongooseAdapter({
     url: process.env.DATABASE_URI || '',
   }),
+  cors: {
+    origins: ['http://localhost:3000'],
+    headers: ['x-payload-http-method-override'],
+  },
   sharp,
   plugins: [
     payloadCloudPlugin(),

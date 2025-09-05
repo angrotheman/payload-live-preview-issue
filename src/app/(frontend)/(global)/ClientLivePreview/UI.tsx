@@ -1,10 +1,10 @@
 'use client'
 
-import { Page } from '@/payload-types'
+import { GlobalPage } from '@/payload-types'
 import { useLivePreview } from '@payloadcms/live-preview-react'
 
-export const UI: React.FC<{ initialPage: Page }> = ({ initialPage }) => {
-  const { data } = useLivePreview<Page>({
+export const UI: React.FC<{ initialPage: GlobalPage }> = ({ initialPage }) => {
+  const { data } = useLivePreview<GlobalPage>({
     initialData: initialPage,
     serverURL: 'http://localhost:3000',
     depth: 1,

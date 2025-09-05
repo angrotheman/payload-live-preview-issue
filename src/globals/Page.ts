@@ -1,7 +1,7 @@
 import type { GlobalConfig } from 'payload'
 
 export const Page: GlobalConfig = {
-  slug: 'page',
+  slug: 'globalPage',
   admin: {
     livePreview: {
       url: () => '/',

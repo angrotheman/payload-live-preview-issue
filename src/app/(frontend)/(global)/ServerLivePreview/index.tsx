@@ -5,7 +5,7 @@ import { RefreshRouteOnSave } from './RefreshRouteOnSave'
 export const ServerLivePreview: React.FC = async () => {
   const payload = await getPayload({ config: payloadConfig })
 
-  const page = await payload.findGlobal({ slug: 'page' })
+  const page = await payload.findGlobal({ slug: 'globalPage' })
 
   return (
     <div>
