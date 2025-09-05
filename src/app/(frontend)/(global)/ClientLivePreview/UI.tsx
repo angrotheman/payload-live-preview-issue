@@ -2,6 +2,7 @@
 
 import { GlobalPage } from '@/payload-types'
 import { useLivePreview } from '@payloadcms/live-preview-react'
+import { PureUI } from '../../PureUI'
 
 export const UI: React.FC<{ initialPage: GlobalPage }> = ({ initialPage }) => {
   const { data } = useLivePreview<GlobalPage>({
@@ -10,10 +11,5 @@ export const UI: React.FC<{ initialPage: GlobalPage }> = ({ initialPage }) => {
     depth: 1,
   })
 
-  return (
-    <div>
-      <h1>{data.title}</h1>
-      <h1>{data['virtual-field']}</h1>
-    </div>
-  )
+  return <PureUI page={data} />
 }

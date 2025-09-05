@@ -1,6 +1,6 @@
 import payloadConfig from '@/payload.config'
 import { getPayload } from 'payload'
-import { RefreshRouteOnSave } from './RefreshRouteOnSave'
+import { RefreshRouteOnSave } from '../../RefreshRouteOnSave'
 
 export const ServerLivePreview: React.FC = async () => {
   const payload = await getPayload({ config: payloadConfig })

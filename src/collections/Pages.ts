@@ -1,14 +1,26 @@
-import type { GlobalConfig } from 'payload'
+import { CollectionConfig } from 'payload'
 
-export const Page: GlobalConfig = {
-  slug: 'globalPage',
+export const Pages: CollectionConfig = {
+  slug: 'pages',
   admin: {
-    preview: () => '/',
+    useAsTitle: 'title',
+    preview: ({ slug }) => {
+      return `/pages/${slug}`
+    },
     livePreview: {
-      url: () => '/',
+      url: ({ data }) => `/pages/${data.slug}`,
     },
   },
   fields: [
+    {
+      type: 'text',
+      name: 'slug',
+      unique: true,
+      required: true,
+      admin: {
+        position: 'sidebar',
+      },
+    },
     {
       type: 'text',
       name: 'title',
