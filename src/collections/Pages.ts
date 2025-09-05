@@ -1,7 +1,7 @@
 import { sharedFields } from '@/sharedFields'
 import { CollectionConfig } from 'payload'
 
-export const Pages: CollectionConfig = {
+export const Pages: CollectionConfig<'pages'> = {
   slug: 'pages',
   admin: {
     useAsTitle: 'title',
@@ -11,6 +11,9 @@ export const Pages: CollectionConfig = {
     livePreview: {
       url: ({ data }) => `/pages/${data.slug}`,
     },
+  },
+  defaultPopulate: {
+    slug: true,
   },
   fields: [
     {

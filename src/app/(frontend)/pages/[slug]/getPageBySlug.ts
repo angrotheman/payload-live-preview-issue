@@ -15,6 +15,12 @@ export const getPageBySlug = async (slug: string) => {
         equals: slug,
       },
     },
+    populate: {
+      pages: {
+        title: true,
+        slug: true,
+      },
+    },
   })
 
   return page
