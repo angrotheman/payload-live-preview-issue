@@ -15,15 +15,15 @@
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start"
   },
   "dependencies": {
-    "@payloadcms/db-mongodb": "3.55.0-internal.df60e35",
-    "@payloadcms/live-preview-react": "3.55.0-internal.df60e35",
-    "@payloadcms/next": "3.55.0-internal.df60e35",
-    "@payloadcms/payload-cloud": "3.55.0-internal.df60e35",
-    "@payloadcms/richtext-lexical": "3.55.0-internal.df60e35",
+    "@payloadcms/db-mongodb": "3.55.0-canary.8",
+    "@payloadcms/live-preview-react": "3.55.0-canary.8",
+    "@payloadcms/next": "3.55.0-canary.8",
+    "@payloadcms/payload-cloud": "3.55.0-canary.8",
+    "@payloadcms/richtext-lexical": "3.55.0-canary.8",
     "cross-env": "^7.0.3",
     "graphql": "^16.8.1",
     "next": "15.5.2",
-    "payload": "3.55.0-internal.df60e35",
+    "payload": "3.55.0-canary.8",
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "sharp": "0.32.6"
