@@ -170,7 +170,7 @@ export interface Page {
   id: string;
   slug: string;
   title?: string | null;
-  'virtual-field'?: string | null;
+  virtualField?: string | null;
   relation?: (string | Page)[] | null;
   updatedAt: string;
   createdAt: string;
@@ -283,7 +283,7 @@ export interface MediaSelect<T extends boolean = true> {
 export interface PagesSelect<T extends boolean = true> {
   slug?: T;
   title?: T;
-  'virtual-field'?: T;
+  virtualField?: T;
   relation?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -327,7 +327,7 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
 export interface GlobalPage {
   id: string;
   title?: string | null;
-  'virtual-field'?: string | null;
+  virtualField?: string | null;
   relation?: (string | Page)[] | null;
   updatedAt?: string | null;
   createdAt?: string | null;
@@ -338,7 +338,7 @@ export interface GlobalPage {
  */
 export interface GlobalPageSelect<T extends boolean = true> {
   title?: T;
-  'virtual-field'?: T;
+  virtualField?: T;
   relation?: T;
   updatedAt?: T;
   createdAt?: T;

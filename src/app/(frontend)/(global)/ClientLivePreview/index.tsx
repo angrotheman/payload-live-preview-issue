@@ -1,11 +1,8 @@
-import payloadConfig from '@/payload.config'
-import { getPayload } from 'payload'
+import { getGlobalPage } from '../getGlobalPage'
 import { UI } from './UI'
 
 export const ClientLivePreview: React.FC = async () => {
-  const payload = await getPayload({ config: payloadConfig })
-
-  const page = await payload.findGlobal({ slug: 'globalPage' })
+  const page = await getGlobalPage()
 
   return <UI initialPage={page} />
 }

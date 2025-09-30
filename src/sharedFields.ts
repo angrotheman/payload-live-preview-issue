@@ -7,7 +7,7 @@ export const sharedFields: Field[] = [
   },
   {
     type: 'text',
-    name: 'virtual-field',
+    name: 'virtualField',
     admin: {
       readOnly: true,
     },
