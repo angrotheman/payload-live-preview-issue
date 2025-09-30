@@ -27,4 +27,33 @@ export const sharedFields: Field[] = [
     hasMany: true,
     relationTo: 'pages',
   },
+
+  {
+    name: 'virtualLocalizedArray',
+    type: 'array',
+    admin: {
+      readOnly: true,
+    },
+    virtual: true,
+    fields: [
+      {
+        name: 'label',
+        type: 'text',
+        localized: true,
+      },
+    ],
+    hooks: {
+      afterRead: [
+        () => [
+          {
+            id: 'item_01',
+            label: {
+              de: 'Deutscher Text',
+              en: 'English text',
+            },
+          },
+        ],
+      ],
+    },
+  },
 ]

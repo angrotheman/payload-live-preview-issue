@@ -17,6 +17,8 @@ export const PureUI = ({ page }: { page: Page | GlobalPage }) => {
             ))}
         </ul>
       )}
+
+      <pre>{JSON.stringify(page.virtualLocalizedArray, null, 2)}</pre>
     </div>
   )
 }

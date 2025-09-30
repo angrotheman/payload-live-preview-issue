@@ -28,6 +28,10 @@ export default buildConfig({
   },
   collections: [Users, Media, Pages],
   globals: [Page],
+  localization: {
+    locales: ['en', 'de'],
+    defaultLocale: 'en',
+  },
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

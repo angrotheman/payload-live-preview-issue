@@ -92,7 +92,7 @@ export interface Config {
   globalsSelect: {
     globalPage: GlobalPageSelect<false> | GlobalPageSelect<true>;
   };
-  locale: null;
+  locale: 'en' | 'de';
   user: User & {
     collection: 'users';
   };
@@ -172,6 +172,12 @@ export interface Page {
   title?: string | null;
   virtualField?: string | null;
   relation?: (string | Page)[] | null;
+  virtualLocalizedArray?:
+    | {
+        label?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -285,6 +291,12 @@ export interface PagesSelect<T extends boolean = true> {
   title?: T;
   virtualField?: T;
   relation?: T;
+  virtualLocalizedArray?:
+    | T
+    | {
+        label?: T;
+        id?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }
@@ -329,6 +341,12 @@ export interface GlobalPage {
   title?: string | null;
   virtualField?: string | null;
   relation?: (string | Page)[] | null;
+  virtualLocalizedArray?:
+    | {
+        label?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -340,6 +358,12 @@ export interface GlobalPageSelect<T extends boolean = true> {
   title?: T;
   virtualField?: T;
   relation?: T;
+  virtualLocalizedArray?:
+    | T
+    | {
+        label?: T;
+        id?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
